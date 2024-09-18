@@ -12,6 +12,7 @@ vim.wo.number = true
 require("config.lazy")
 require("config.telescope-remap")
 require("mason").setup()
+require('mason-lspconfig').setup({})
 require("config.treesitter-config")
 require("config.remaps")
 require("config.cmp-config")
