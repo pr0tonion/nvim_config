@@ -1,15 +1,11 @@
-local cmp = require('cmp')
+ local cmp = require'cmp'
 
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-      end,
+     expand = function(args)
+      require('luasnip').lsp_expand(args.body)  -- LuaSnip setup
+    end,
     },
     window = {
       -- completion = cmp.config.window.bordered(),
@@ -22,17 +18,18 @@ local cmp = require('cmp')
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-
-
-	sources = cmp.config.sources({
+    sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
+	  { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer' },
-    })
+	  { name = 'path'}
+    }),
+	 completion = {
+    autocomplete = { cmp.TriggerEvent.TextChanged },  -- Autocomplete on text change (like typing '.')
+  },
   })
 
   -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
@@ -64,15 +61,5 @@ local cmp = require('cmp')
     }),
     matching = { disallow_symbol_nonprefix_matching = false }
   })
-
-local lspconfig = require('lspconfig')
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-lspconfig.ts_ls.setup({
-  capabilities = lsp_capabilities,
-})
-lspconfig.lua_ls.setup({
-  capabilities = lsp_capabilities,
-})
 
 

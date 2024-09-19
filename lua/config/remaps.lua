@@ -10,8 +10,8 @@ end
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Change split orientation
-map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
-map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to verticai 
+map('n', '<leader>tk', '<C-w>t<C-w>K', {desc = "Tab vertical to horizontal"}) -- change vertical to horizontal
+map('n', '<leader>th', '<C-w>t<C-w>H', {desc = "Tab Horizontal to vertical"}) -- change horizontal to verticai 
 
 -- Move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h')
@@ -21,6 +21,10 @@ map('n', '<C-l>', '<C-w>l')
 
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
+
+-- Go Up/Down 10
+map('n', 'J', '10j') -- Shift + j to move down 10 lines
+map('n', 'K', '10k') -- Shift + k to move up 10 lines
 
 -- NvimTree
 --map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
