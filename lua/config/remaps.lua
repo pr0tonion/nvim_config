@@ -30,3 +30,6 @@ map('n', 'K', '10k') -- Shift + k to move up 10 lines
 --map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 --map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 --map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+
+--Formatter
+
