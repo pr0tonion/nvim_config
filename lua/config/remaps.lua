@@ -19,6 +19,12 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
+-- Disable arrow keys
+map('n', '<Up>', '<Nop>')
+map('n', '<Down>', '<Nop>')
+map('n', '<Left>', '<Nop>')
+map('n', '<Right>', '<Nop>')
+
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
@@ -32,4 +38,3 @@ map('n', 'K', '10k') -- Shift + k to move up 10 lines
 --map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 --Formatter
-
