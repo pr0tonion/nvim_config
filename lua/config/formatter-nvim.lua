@@ -1,5 +1,8 @@
 -- Utilities for creating configurations
 local util = require "formatter.util"
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 require("formatter").setup {
@@ -52,3 +55,9 @@ require("formatter").setup {
     }
   }
 }
+
+augroup("__formatter__", { clear = true })
+autocmd("BufWritePost", {
+	group = "__formatter__",
+	command = ":FormatWrite",
+})
