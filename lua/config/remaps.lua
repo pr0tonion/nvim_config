@@ -33,7 +33,7 @@ map('n', 'J', '10j') -- Shift + j to move down 10 lines
 map('n', 'K', '10k') -- Shift + k to move up 10 lines
 
 -- NvimTree
---map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+map('n', '<leader><tab>', ':NvimTreeToggle<CR>')            -- open/close
 --map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 --map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
