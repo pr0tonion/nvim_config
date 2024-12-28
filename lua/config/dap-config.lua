@@ -5,9 +5,6 @@ local dapui = require("dapui")
 require("nvim-dap-virtual-text").setup()
 dapui.setup()
 
-
-
-
 -- Python adapter configuration
 dap.adapters.python = {
   type = 'executable';
