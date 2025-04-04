@@ -1,12 +1,10 @@
 return {
 	{
 		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
+		event = "VimEnter",
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 		config = function()
-			require('dashboard').setup {
-				-- config
-			}
+			require("config.dashboard-nvim")
 		end,
-		dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 	}
 }
